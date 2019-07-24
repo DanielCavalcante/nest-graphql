@@ -1,10 +1,19 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { GraphqlModule } from './graphql/graphql.module';
+import { Module } from '@nestjs/common'
+import { AppController } from './app.controller'
+import { GraphQLModule } from '@nestjs/graphql'
+import { AppService } from './app.service'
+import { GraphModule } from './graph/graph.module'
 
 @Module({
-  imports: [GraphqlModule],
+  imports: [
+    GraphQLModule.forRoot({
+      // debug: false,
+      // playground: false,
+      installSubscriptionHandlers: true,
+      autoSchemaFile: 'schema.gql'
+    }),
+    GraphModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
