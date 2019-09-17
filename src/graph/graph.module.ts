@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
-import { ProductService } from './services/product.service'
-import { ProductResolver } from './resolvers/product.resolver'
+import { PetService } from './services/pet.service'
+import { PetResolver } from './resolvers/pet.resolver'
 
 @Module({})
 export class GraphModule {
-  providers: [ProductService, ProductResolver]
+  providers: [PetService, PetResolver]
 }

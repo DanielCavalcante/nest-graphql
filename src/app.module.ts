@@ -8,7 +8,7 @@ import { GraphModule } from './graph/graph.module'
   imports: [
     GraphQLModule.forRoot({
       // debug: false,
-      // playground: false,
+      playground: true,
       installSubscriptionHandlers: true,
       autoSchemaFile: 'schema.gql'
     }),
