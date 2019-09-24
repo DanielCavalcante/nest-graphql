@@ -1,8 +1,18 @@
 import { Module } from '@nestjs/common'
-import { PetService } from './services/pet.service'
-import { PetResolver } from './resolvers/pet.resolver'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { User } from './entities/user.entity'
+import { UserService } from './services/user.service'
 
-@Module({})
-export class GraphModule {
-  providers: [PetService, PetResolver]
-}
+@Module({
+  imports: [
+    TypeOrmModule.forFeature(
+      [
+        User
+      ]
+    )
+  ],
+  providers: [
+    UserService
+  ]
+})
+export class GraphModule {}
