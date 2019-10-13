@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { User } from './entities/user.entity'
 import { UserService } from './services/user.service'
+import { UserResolver } from './resolvers/user.resolver'
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { UserService } from './services/user.service'
     )
   ],
   providers: [
+    UserResolver,
     UserService
   ]
 })

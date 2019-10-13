@@ -17,6 +17,12 @@ import { GraphModule } from './graph/graph.module'
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true
     }),
+    GraphQLModule.forRoot({
+      debug: false,
+      playground: true,
+      installSubscriptionHandlers: true,
+      autoSchemaFile: 'schema.gql',
+    }),
     GraphModule
   ],
   controllers: [AppController],
