@@ -13,7 +13,7 @@ import { GraphModule } from './graph/graph.module'
       host: 'localhost',
       username: 'postgres',
       password: 'root@123',
-      database: 'nestjs_graphql',
+      database: 'lab-react',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true
     }),
